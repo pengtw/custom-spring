@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+
+    <bean id="cpu" class="com.austin.custom.spring.test.pojo.IntelCpu"></bean>
+
+    <bean id="keyboard" class="com.austin.custom.spring.test.pojo.ThunderSnakeKeyboard"></bean>
+
+    <bean id="computer" class="com.austin.custom.spring.test.pojo.Computer">
+        <property name="cpu" ref="cpu"></property>
+        <property name="keyboard" ref="keyboard"></property>
+    </bean>
+
+
+    <bean id="userDao" class="com.austin.custom.spring.test.dao.UserDaoImpl"></bean>
+    <bean id="userService" class="com.austin.custom.spring.test.service.UserServiceImpl">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+</beans>
